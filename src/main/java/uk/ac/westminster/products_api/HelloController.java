@@ -10,9 +10,8 @@ import java.time.LocalDate;
  * Already provided:
  *   GET /hello   -> a simple greeting
  *   GET /status  -> a simple status message
- * TODO (Lab Activity 3):
- *   Add a new endpoint GET /goodbye that returns the String
- *   "Goodbye from Spring Boot!"
+ * Added in Lab Activity 3:
+ *   GET /goodbye -> returns "Goodbye from Spring Boot!"
  */
 
 @RestController
@@ -20,14 +19,17 @@ public class HelloController {
 
     @GetMapping("/hello")
     public String hello(){
-        return "Hello from Spring Boots!";
+        return "Hello from Spring Boot!";
+    }
+
+    @GetMapping("/goodbye")
+    public String goodbye(){
+        return "Goodbye from Spring Boot!";
     }
 
     @GetMapping("/status")
     public String status(){
-        return "API running -" + LocalDate.now().toString();
+        return "API running - " + LocalDate.now().toString();
     }
-
-    // TODO (Activity 3): add your /goodbye endpoint here.
 
 }
